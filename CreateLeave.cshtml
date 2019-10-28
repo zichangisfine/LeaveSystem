@@ -1,0 +1,65 @@
+﻿@model 請假系統.Models.LeaveTable
+
+
+
+<!DOCTYPE html>
+
+<h2>新增請假項目</h2>
+@Html.ActionLink("返回首頁", "Index")
+
+
+<br />
+
+<form method="post" action="/Home/CreateLeave">
+
+    <div class="form-group row">
+        <label for="input員編" class="col-sm-12">員編</label>
+        <div class="col-sm-10">
+            <input type="text" id="input員編" name="員編" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="input開始日期" class="col-sm-12">開始日期(格式2015/1/1)</label>
+        <div class="col-sm-10">
+            <input type="text" id="input開始日期" name="開始日期" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="input開始時間" class="col-sm-12">開始時間(格式08:00:00)</label>
+        <div class="col-sm-10">
+            <input type="text" id="input開始時間" name="開始時間" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="input結束日期" class="col-sm-12">結束日期(格式2018/12/31)</label>
+        <div class="col-sm-10">
+            <input type="text" id="input結束日期" name="結束日期" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="input結束時間" class="col-sm-12">結束時間(格式19:00:00)</label>
+        <div class="col-sm-10">
+            <input type="text" id="input結束時間" name="結束時間" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="input假別" class="col-sm-12">假別</label>
+        <div class="col-sm-10">
+            <input type="text" id="input假別" name="假別" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="input假別子項目" class="col-sm-12">假別子項目(非必填)</label>
+        <div class="col-sm-10">
+            <input type="text" id="input假別子項目" name="假別子項目" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="input送審主管" class="col-sm-12">送審主管</label>
+        <div class="col-sm-10">
+            <input type="text" id="input送審主管" name="送審主管" class="form-control" />
+        </div>
+    </div>
+    <input class="btn btn-default" type="submit" value="新增" />
+
+</form>

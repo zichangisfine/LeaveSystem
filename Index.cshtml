@@ -1,0 +1,52 @@
+﻿@using 請假系統.Models
+@using MySql.Data.MySqlClient;
+@{
+    List<LeaveTable> leaveTables = ViewBag.leaveTables;
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>員編</th>
+            <th>開始日期</th>
+            <th>開始時間</th>
+            <th>結束日期</th>
+            <th>結束時間</th>
+            <th>假別</th>
+            <th>假別子項目</th>
+            <th>送審主管</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (LeaveTable leave in leaveTables)
+        {
+        <tr>
+            <th>@leave.員編</th>
+            <th>@leave.開始日期</th>
+            <th>@leave.開始時間</th>
+            <th>@leave.結束日期</th>
+            <th>@leave.結束時間</th>
+            <th>@leave.假別</th>
+            <th>@leave.假別子項目</th>
+            <th>@leave.送審主管</th>
+            <th>@Html.ActionLink("修改", "EditLeave", new { 序號 = leave.序號 })
+            <th>
+            <th>@Html.ActionLink("刪除", "DeleteLeave", new { 序號 = leave.序號 })
+            <th>
+            <th>
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+<p>
+    @Html.ActionLink("新增請假項目", "CreateLeave")
+</p>
+
+
+
+<p>
+    @Html.ActionLink("查詢請假項目", "SearchLeave")
+</p>

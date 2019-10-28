@@ -1,0 +1,30 @@
+MySql用戶名需設置為root，密碼為jc314159265jc
+
+連線字串為
+"server=localhost;port=3306;database=LeaveSystem;user=root;password=jc314159265jc;allow zero datetime=true;allow User Variables=True"
+
+需先建立資料庫，語句如下:
+
+Create database LeaveSystem
+
+使用:
+
+Use LeaveSystem
+
+再輸入建立資料表語句:
+
+CREATE table LeaveTable (
+序號 int unsigned auto_increment primary key,
+員編 char(50) not null default '',
+開始日期 date not null default '2000-00-00',
+開始時間 time not null default '00:00:00',
+結束日期 date not null default '2000-00-00',
+結束時間 time not null default '00:00:00',
+假別  char(50)  not null default '',
+假別子項目  char(50)  not null default '',
+送審主管  char(50) not null default ''
+)engine myisam charset utf8mb4;
+
+
+
+即可建立資料表
